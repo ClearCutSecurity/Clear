@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Landing Page</title>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Hero -->
+  <header class="hero">
+    <div class="overlay">
+      <h1 class="tagline">Clear Cut Security Solutions</h1>
+      <nav class="nav">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- About -->
+    <section id="about">
+      <h2>About</h2>
+      <div class="about-content">
+        <img src="https://i.imgur.com/7qWJ5uY.png" alt="Ryan Cleary">
+        <div class="about-text">
+          <p>
+            My name is Ryan Cleary, I have spent my career on the front lines of security. From military service to frontline roles in prisons, licensed close protection, and leading high-profile door teams, I have worked in some of the most demanding and high-risk environments out there.
+          </p>
+          <p>
+            That experience gave me a sharp eye for spotting weaknesses, operational gaps, complacency, and overlooked risks that can leave venues and businesses wide open. It is exactly what pushed me to launch Clear Cut Security Solutions—an independent consultancy that helps business owners like you make sure your security team is actually doing the job you pay for.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services">
+      <h2>Our Services</h2>
+
+      <h3>1. One-Time Security Assessments</h3>
+      <p>These are in-depth, professional evaluations with a full report.</p>
+      <ul>
+        <li><strong>Small Venue / Single Site</strong> (e.g., bar, small office, retail unit)</li>
+        <li><strong>Medium Venue / Multi-Zone Site</strong> (e.g., nightclub, warehouse, hotel)</li>
+        <li><strong>Large Site / Complex Setup</strong> (e.g., shopping centre, industrial estate, festival)</li>
+      </ul>
+
+      <h3>2. Mystery Guest Security Evaluations</h3>
+      <p>Discreet, real-world testing of your venue’s security and staff response protocols.</p>
+
+      <h3>3. Workshops &amp; Training</h3>
+      <p>Focused on business owners, venue managers, or staff teams.</p>
+      <ul>
+        <li><strong>One-on-One Consultation</strong> (1–2 hours)</li>
+        <li><strong>Half-Day Workshop</strong> (On-site or Virtual)</li>
+        <li><strong>Full-Day Training Session for Teams</strong></li>
+      </ul>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>Email us at <a href="mailto:Ryan.Cleary@ClearCutSecuritySolutions.com">Ryan.Cleary@ClearCutSecuritySolutions.com</a></p>
+      <p>Call us on <a href="tel:+447300235287">07300 235287</a></p>
+    </section>
+  </main>
+
+  <!-- Footer / Privacy & Terms popups -->
+  <footer class="footer-nav">
+    <a href="#" onclick="openPrivacy()">Privacy Policy</a>
+    |
+    <a href="#" onclick="openTerms()">Terms &amp; Conditions</a>
+  </footer>
+
+  <script>
+    const siteCSS = Array.from(document.styleSheets)
+      .filter(ss => !ss.href || ss.href.startsWith(window.location.origin))
+      .map(ss => Array.from(ss.cssRules).map(r => r.cssText).join('\n'))
+      .join('\n');
+
+    function openPolicy(title, contentHTML) {
+      const win = window.open('', '_blank');
+      win.document.write(`
+        <!DOCTYPE html><html lang="en"><head>
+          <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+          <title>${title}</title><style>${siteCSS}</style>
+        </head><body>
+          <section style="margin:2rem;">
+            ${contentHTML}
+            <p><a href="#" onclick="window.close()">Close</a></p>
+          </section>
+        </body></html>`);
+      win.document.close();
+    }
+
+    function openPrivacy() {
+      openPolicy('Privacy Policy', `
+        <h1>Privacy Policy</h1>
+        <p>At Clear Cut Security Solutions, we take your privacy seriously. We collect only the information necessary to deliver our consulting and training services, including your name, contact details, and any security-related data you provide. We will never share your personal data with third parties without your explicit consent, except where required by law. All data is stored securely and retained only for as long as necessary to fulfill our services.</p>
+        <p>If you have any questions or wish to request deletion, please email <a href="mailto:Ryan.Cleary@ClearCutSecuritySolutions.com">Ryan.Cleary@ClearCutSecuritySolutions.com</a>.</p>
+      `);
+    }
+
+    function openTerms() {
+      openPolicy('Terms & Conditions', `
+        <h1>Terms &amp; Conditions</h1>
+        <p>By engaging Clear Cut Security Solutions, you agree to our standard consulting terms. Our services are provided on a best-effort basis and tailored to your needs. All assessments, reports, and training materials remain our intellectual property until full payment is received. You may not reproduce, distribute, or use our materials beyond your internal security improvements without written permission.</p>
+        <p>Fees are due as outlined in your invoice. Cancellation or rescheduling of workshops/training must be made at least 7 days in advance to avoid a 50% charge. We disclaim liability for any indirect or consequential losses arising from the implementation of our recommendations.</p>
+      `);
+    }
+  </script>
+</body>
+</html>
