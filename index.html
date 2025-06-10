@@ -4,9 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Landing Page</title>
-<link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+
   <!-- Hero -->
   <header class="hero">
     <div class="overlay">
@@ -37,35 +37,84 @@
     </section>
 
     <!-- Services -->
-    <section id="services">
-      <h2>Our Services</h2>
+<section id="services">
+  <div class="content-wrapper" style="max-width: 700px; margin: 0 auto; padding: 20px;">
+    <h2>Services</h2>
 
-      <h3>1. One-Time Security Assessments</h3>
-      <p>These are in-depth, professional evaluations with a full report.</p>
-      <ul>
-        <li><strong>Small Venue / Single Site</strong> (e.g., bar, small office, retail unit)</li>
-        <li><strong>Medium Venue / Multi-Zone Site</strong> (e.g., nightclub, warehouse, hotel)</li>
-        <li><strong>Large Site / Complex Setup</strong> (e.g., shopping centre, industrial estate, festival)</li>
-      </ul>
+    <h3>Security Risk Assessments</h3>
+    <p>We look at your business with a critical eye, not to tick a box, but to find what others miss.</p>
+    <ul>
+      <li>One-off site assessments</li>
+      <li>Venue audits for bars, clubs, hotels and more</li>
+      <li>Office and warehouse security checks</li>
+      <li>Clear & practical, threat and vulnerability reports</li>
+    </ul>
 
-      <h3>2. Mystery Guest Security Evaluations</h3>
-      <p>Discreet, real-world testing of your venue’s security and staff response protocols.</p>
+    <br>
 
-      <h3>3. Workshops &amp; Training</h3>
-      <p>Focused on business owners, venue managers, or staff teams.</p>
-      <ul>
-        <li><strong>One-on-One Consultation</strong> (1–2 hours)</li>
-        <li><strong>Half-Day Workshop</strong> (On-site or Virtual)</li>
-        <li><strong>Full-Day Training Session for Teams</strong></li>
-      </ul>
-    </section>
+    <h3>Mystery Guest Checks</h3>
+    <p>We go in undercover and observe exactly how your security is performing from a customer’s point of view.</p>
+    <p>You get the truth, not a filtered version.</p>
+    <ul>
+      <li>Door supervisor evaluations</li>
+      <li>Static guard patrol reviews</li>
+      <li>Mobile response testing</li>
+      <li>Behaviour, attitude and compliance feedback</li>
+    </ul>
+
+    <br>
+
+    <h3>Training and Workshops</h3>
+    <p>
+      We deliver security awareness training for bar staff, venue managers and frontline teams.
+      The aim is simple: to improve how your team works alongside your security. 
+      Better understanding, smoother communication, and less friction at the front door.
+    </p>
+    <ul>
+      <li>Frontline mindset training</li>
+      <li>One-to-one coaching</li>
+      <li>Half-day and full-day workshops</li>
+    </ul>
+
+    <br>
+
+    <h3>Support and Oversight Plan</h3>
+    <p>
+      For clients who want more than a one-off visit, we offer a Support and Oversight Plan.
+      This includes random spot checks and follow-up visits twice a month, with no advance notice to staff.
+    </p>
+    <p>
+      We assess how your door staff interact with the public, how they present themselves,
+      and whether they uphold your brand’s standards. When security providers know someone might be checking in,
+      they are more likely to send better staff and maintain high standards.
+    </p>
+
+    <br>
+
+    <h3>Event Security Management</h3>
+    <p>
+      We provide full-scale event security management, covering both frontline and executive-level coordination.
+      From corporate launches to large-scale festivals, we bring hands-on experience in running security operations with precision.
+    </p>
+    <p>
+      Our team has delivered full-spectrum security management for high-profile events, including those featuring artists such as Pixie Lott and Tom Zanetti. We’ve overseen every element, from strategic crowd control planning to real-time ground coordination, as well as VIP escorting and executive protection.
+    </p>
+  </div>
+</section>
 
     <!-- Contact -->
-    <section id="contact">
-      <h2>Contact</h2>
-      <p>Email us at <a href="mailto:Ryan.Cleary@ClearCutSecuritySolutions.com">Ryan.Cleary@ClearCutSecuritySolutions.com</a></p>
-      <p>Call us on <a href="tel:+447300235287">07300 235287</a></p>
-    </section>
+<section id="contact">
+  <h2>Let’s Talk Security</h2>
+  <p>
+    To get a no nonsense view of where your security stands and how we can help you strengthen it.
+  </p>
+  <p> Book a free 15 minute consultation
+  </p>
+  <p>
+    📧 <a href="mailto:ryan.cleary@clearcutsecuritysolutions.com">ryan.cleary@clearcutsecuritysolutions.com</a><br>
+    📞 <a href="tel:+447300235287">07300 235287</a>
+  </p>
+</section>
   </main>
 
   <!-- Footer / Privacy & Terms popups -->
@@ -83,16 +132,15 @@
 
     function openPolicy(title, contentHTML) {
       const win = window.open('', '_blank');
-      win.document.write(`
-        <!DOCTYPE html><html lang="en"><head>
-          <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-          <title>${title}</title><style>${siteCSS}</style>
-        </head><body>
-          <section style="margin:2rem;">
-            ${contentHTML}
-            <p><a href="#" onclick="window.close()">Close</a></p>
-          </section>
-        </body></html>`);
+      win.document.write(`<!DOCTYPE html><html lang="en"><head>
+        <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+        <title>${title}</title><style>${siteCSS}</style>
+      </head><body>
+        <section style="margin:2rem;">
+          ${contentHTML}
+          <p><a href="#" onclick="window.close()">Close</a></p>
+        </section>
+      </body></html>`);
       win.document.close();
     }
 
