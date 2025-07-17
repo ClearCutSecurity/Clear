@@ -153,4 +153,59 @@ main {
   .content-wrapper {
     padding: 1rem;
   }
+}.team-member {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 1.5rem;
+  justify-content: center;
+  max-width: 1000px;
+  margin: 0 auto 3rem auto;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #444;
+}
+
+.team-member:last-child {
+  border-bottom: none;
+}
+
+.team-member img {
+  width: 200px;
+  border-radius: 10px;
+  object-fit: cover;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.about-text {
+  flex: 1;
+  min-width: 250px;
+  max-width: 600px;
+}
+
+.about-text p {
+  color: #eee;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+  .team-member {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .about-text {
+    text-align: center;
+  }
+}.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  filter: blur(5px);
+  transition: all 0.8s ease-out;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0);
 }
