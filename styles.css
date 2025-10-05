@@ -13,7 +13,7 @@ body {
 /* Hero */
 .hero {
   height: 150vh;
-  background: url('https://i.imgur.com/9CPZ0Zz.png') center/cover no-repeat;
+  background: url('images/Hero.png') center/cover no-repeat;
   display: flex; align-items: center; justify-content: center;
 }
 .overlay {
